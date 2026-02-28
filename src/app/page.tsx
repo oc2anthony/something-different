@@ -34,11 +34,12 @@ const galleryMood = [
 
 const motionFade = {
   hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: "easeOut" },
-  },
+  visible: { opacity: 1, y: 0 },
+}
+
+const motionTransition = {
+  duration: 0.55,
+  ease: [0.22, 1, 0.36, 1] as const,
 }
 
 export default function Home() {
@@ -74,6 +75,7 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={motionFade}
+              transition={motionTransition}
             >
               <Badge className="text-sm uppercase tracking-[0.4em] text-[#222]">
                 {hero.badge}
@@ -90,6 +92,7 @@ export default function Home() {
                 <motion.p
                   className="max-w-3xl text-lg leading-relaxed text-[#2d2d2d]"
                   variants={motionFade}
+                  transition={motionTransition}
                 >
                   {hero.subtitle}
                 </motion.p>
