@@ -34,11 +34,11 @@ const galleryMood = [
 
 const motionFade = {
   hidden: { opacity: 0, y: 20 },
-  visible: (delay = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay, duration: 0.45, ease: "easeOut" },
-  }),
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
 }
 
 export default function Home() {
